@@ -62,6 +62,7 @@
  uint32_t millivolts_smoke;
 
  uint32_t light_threshold = 1000;
+ uint32_t smoke_threshold = 500;
 
  uint8_t channel = 0;
 void initADC (void)
@@ -111,6 +112,25 @@ void initADC (void)
   NVIC_EnableIRQ(ADC0_IRQn);
 }
 
+
+//void readJoystick(){
+//  uint8_t adc0_val;
+//
+//  adc0_init_single.posSel = adcPosSelAPORT3XCH4;
+//  ADC_InitSingle(ADC0, &adc0_init_single);
+//  ADC_Start(ADC0, adcStartSingle);
+//  while(! (ADC0->STATUS & ADC_STATUS_SINGLEDV));
+//  adc0_val = ADC_DataSingleGet(ADC0);
+//  displayPrintf(DISPLAY_ROW_9, "HOR is : %u ",adc0_val);
+//
+//  adc0_init_single.posSel = adcPosSelAPORT3XCH2;
+//  ADC_InitSingle(ADC0, &adc0_init_single);
+//  ADC_Start(ADC0, adcStartSingle);
+//  while(! (ADC0->STATUS & ADC_STATUS_SINGLEDV));
+//  adc0_val = ADC_DataSingleGet(ADC0);
+//  displayPrintf(DISPLAY_ROW_10, "VER is : %u ",adc0_val);
+//
+//}
 /**************************************************************************//**
  * @brief  ADC Handler
  *****************************************************************************/
@@ -148,7 +168,7 @@ int convert_light()
 
   // Print
   LOG_INFO("ADC data received: %u mV\r\n", millivolts_light);
-  displayPrintf(DISPLAY_ROW_11, "Light value = %d lux",millivolts_light);
+  displayPrintf(DISPLAY_ROW_11, "Light val = %d lux",millivolts_light);
 
   if (millivolts_light < light_threshold)
   {
@@ -177,9 +197,9 @@ int convert_smoke()
 
   // Print
   LOG_INFO("ADC data received: %u mV\r\n", millivolts_smoke);
-  displayPrintf(DISPLAY_ROW_10, "Smoke value = %d lux",millivolts_smoke);
+  displayPrintf(DISPLAY_ROW_10, "Smoke val = %d mV",millivolts_smoke);
 
-  if (millivolts_smoke < light_threshold)
+  if (millivolts_smoke < smoke_threshold)
   {
 
       //GPIO_PinOutSet(gpioPortD, 10);

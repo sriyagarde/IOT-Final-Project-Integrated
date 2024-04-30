@@ -77,6 +77,7 @@ void init_oscillator()
 
         // CLOCK Enable for LETIMER0.
         CMU_ClockEnable (cmuClock_LETIMER0, true);
+        CMU_ClockEnable(cmuClock_GPIO, true);
 
         // CLOCK Enable for GPIO
        // CMU_ClockEnable(cmuClock_GPIO, true);

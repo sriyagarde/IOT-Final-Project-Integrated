@@ -115,7 +115,7 @@ app.o: ../app.c \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_gpio.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\driver\i2cspm\inc/sl_i2cspm.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_i2c.h \
- ../src/ble_device_type.h ../src/i2c.h
+ ../src/ble_device_type.h ../src/i2c.h ../src/ws281b.h
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\common\toolchain\inc/sl_gcc_preinclude.h:
 ../src/log.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\app\common\util\app_log/app_log.h:
@@ -240,3 +240,4 @@ C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_i2c.h:
 ../src/ble_device_type.h:
 ../src/i2c.h:
+../src/ws281b.h:

@@ -67,6 +67,7 @@
 #include "src/scheduler.h"
 #include "src/i2c.h"
 #include "src/scheduler.h"
+#include "src/ws281b.h"
 
 
 // Students: Here is an example of how to correctly include logging functions in

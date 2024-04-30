@@ -1,6 +1,5 @@
-src/gpio.o: ../src/gpio.c \
+src/ws281b.o: ../src/ws281b.c \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\common\toolchain\inc/sl_gcc_preinclude.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_gpio.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\Device\SiliconLabs\EFR32BG13P\Include/em_device.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\Device\SiliconLabs\EFR32BG13P\Include/efr32bg13p632f512gm48.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\CMSIS\Include/core_cm4.h \
@@ -56,33 +55,25 @@ src/gpio.o: ../src/gpio.c \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\Device\SiliconLabs\EFR32BG13P\Include/efr32bg13p_dmareq.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\Device\SiliconLabs\EFR32BG13P\Include/efr32bg13p_af_ports.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\Device\SiliconLabs\EFR32BG13P\Include/efr32bg13p_af_pins.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_bus.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_assert.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_core.h \
+ C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_chip.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_common.h \
+ C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_assert.h \
+ C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_system.h \
+ C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_gpio.h \
+ C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_bus.h \
+ C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_core.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\autogen/sl_component_catalog.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\config/emlib_core_debug_config.h \
- ../src/ble.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight/src/timers.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight/src/oscillators.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight/src/gpio.h \
+ C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_gpio.h \
+ C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_cmu.h \
+ C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_cmu_compat.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight/app.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_letimer.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight/src/oscillators.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight/src/gpio.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight/src/i2c.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\protocol\bluetooth\inc/sl_bgapi.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\driver\i2cspm\inc/sl_i2cspm.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_i2c.h \
- ../src/ble_device_type.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\protocol\bluetooth\inc/sl_bt_api.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\common\inc/sl_status.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\protocol\bluetooth\inc/sl_bgapi.h \
- C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\protocol\bluetooth\inc/sl_bt_api_compatibility.h \
- ../src/gpio.h ../src/ws281b.h \
+ ../src/ws281b.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight/src/log.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\app\common\util\app_log/app_log.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\service\iostream\inc/sl_iostream.h \
+ C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\common\inc/sl_status.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\common\inc/sl_enum.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\autogen/sl_iostream_handles.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\autogen/sl_iostream_init_usart_instances.h \
@@ -99,7 +90,6 @@ src/gpio.o: ../src/gpio.c \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\service\iostream\inc/sl_iostream.h \
  C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\config/app_log_config.h
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\common\toolchain\inc/sl_gcc_preinclude.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_gpio.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\Device\SiliconLabs\EFR32BG13P\Include/em_device.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\Device\SiliconLabs\EFR32BG13P\Include/efr32bg13p632f512gm48.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\CMSIS\Include/core_cm4.h:
@@ -155,34 +145,25 @@ C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\Device\SiliconLabs\EFR32BG13P\Include/efr32bg13p_dmareq.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\Device\SiliconLabs\EFR32BG13P\Include/efr32bg13p_af_ports.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\Device\SiliconLabs\EFR32BG13P\Include/efr32bg13p_af_pins.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_bus.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_assert.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_core.h:
+C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_chip.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_common.h:
+C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_assert.h:
+C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_system.h:
+C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_gpio.h:
+C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_bus.h:
+C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_core.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\autogen/sl_component_catalog.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\config/emlib_core_debug_config.h:
-../src/ble.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight/src/timers.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight/src/oscillators.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight/src/gpio.h:
+C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_gpio.h:
+C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_cmu.h:
+C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_cmu_compat.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight/app.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_letimer.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight/src/oscillators.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight/src/gpio.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight/src/i2c.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\protocol\bluetooth\inc/sl_bgapi.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\driver\i2cspm\inc/sl_i2cspm.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\emlib\inc/em_i2c.h:
-../src/ble_device_type.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\protocol\bluetooth\inc/sl_bt_api.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\common\inc/sl_status.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\protocol\bluetooth\inc/sl_bgapi.h:
-C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\protocol\bluetooth\inc/sl_bt_api_compatibility.h:
-../src/gpio.h:
 ../src/ws281b.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight/src/log.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\app\common\util\app_log/app_log.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\service\iostream\inc/sl_iostream.h:
+C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\common\inc/sl_status.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\gecko_sdk_3.2.9\platform\common\inc/sl_enum.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\autogen/sl_iostream_handles.h:
 C\:\Users\SRIYA\SimplicityStudio\v5_workspace\ecen5823-finalproject_ambientlight\autogen/sl_iostream_init_usart_instances.h:

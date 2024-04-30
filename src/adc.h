@@ -12,6 +12,6 @@
 
 void initADC (void);
 int convert_light();
-
+int convert_smoke();
 
 #endif /* SRC_ADC_H_ */

@@ -36,6 +36,7 @@
 #include "sl_bt_api.h"
 #include "stdbool.h"
 #include "adc.h"
+//#include "ws281b.h"
 // Include logging for this file
 #define INCLUDE_LOG_DEBUG 1
 #include "src/log.h"
@@ -298,6 +299,7 @@ void ble_smoke()
   if (bleData->connected == true)
     {
       uint8_t smokeState = convert_smoke();
+      LOG_INFO("Smoke state = %d",smokeState);
       smoke_status[0] = smokeState;
       smoke_status[1] = 0;
       sl_status_t sc = sl_bt_gatt_server_write_attribute_value (
@@ -928,14 +930,15 @@ void handle_ble_event (sl_bt_msg_t *evt)
                              //Calculate the temperature and display it on the client LCD
                              //temperature_in_c_client = FLOAT_TO_INT32(bleData->chars_value);
                              if(evt->data.evt_gatt_characteristic_value.value.data[0] == 0x01) {
-                                 displayPrintf(DISPLAY_ROW_9, "Buzzer On");
+                                 displayPrintf (DISPLAY_ROW_TEMPVALUE, "Buzzer is On\r\n");
+
                              }
                              else if(evt->data.evt_gatt_characteristic_value.value.data[0] == 0x00){
-                                 displayPrintf(DISPLAY_ROW_9, "Buzzer Off");
+                                 displayPrintf(DISPLAY_ROW_TEMPVALUE, "Buzzer is Off");
                              }
 
                 // temperature_in_c_client = FLOAT_TO_INT32((bleData->chars_value));
-                 displayPrintf(DISPLAY_ROW_TEMPVALUE, "Light = %d lux",bleData->light_chars_value);
+                 //displayPrintf(DISPLAY_ROW_TEMPVALUE, "Light = %d lux",bleData->light_chars_value);
              }
 
 //             //check if we got a read response, if yes show button on lcd
@@ -948,20 +951,25 @@ void handle_ble_event (sl_bt_msg_t *evt)
 //                 }
 //             }
 
+             displayPrintf(DISPLAY_ROW_10, "Smoke sensor value");
              if(evt->data.evt_gatt_characteristic_value.characteristic == bleData->smoke_chars_handle) {
                  //save value got from server in a variable
                  bleData->smoke_chars_value = &(evt->data.evt_gatt_characteristic_value.value.data[0]);
                              //Calculate the temperature and display it on the client LCD
                              //temperature_in_c_client = FLOAT_TO_INT32(bleData->chars_value);
+
                              if(evt->data.evt_gatt_characteristic_value.value.data[0] == 0x01) {
-                                 displayPrintf(DISPLAY_ROW_9, "LED On");
+                                // displayPrintf(DISPLAY_ROW_10, "LED On");
+                                 displayPrintf (DISPLAY_ROW_ACTION, "Light is On\r\n");
+                                 wsb_enable();
                              }
                              else if(evt->data.evt_gatt_characteristic_value.value.data[0] == 0x00){
-                                 displayPrintf(DISPLAY_ROW_9, "LED Off");
+                                 displayPrintf (DISPLAY_ROW_ACTION, "Light is Off\r\n");
+                                 wsb_disable();
                              }
 
                 // temperature_in_c_client = FLOAT_TO_INT32((bleData->chars_value));
-                 displayPrintf(DISPLAY_ROW_TEMPVALUE, "Smoke = %d percent",bleData->smoke_chars_value);
+                // displayPrintf(DISPLAY_ROW_TEMPVALUE, "Smoke = %d percent",bleData->smoke_chars_value);
              }
 
              break;

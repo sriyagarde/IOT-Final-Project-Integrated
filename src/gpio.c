@@ -28,19 +28,22 @@
 #include <stdbool.h>
 #include "em_gpio.h"
 #include <string.h>
-
+#include "ble.h"
 #include "gpio.h"
 #include "app.h"
+#include "ws281b.h"
 
 #define INCLUDE_LOG_DEBUG 1
 #include "src/log.h"
-// Student Edit: Define these, 0's are placeholder values.
-//
-// See the radio board user guide at https://www.silabs.com/documents/login/user-guides/ug279-brd4104a-user-guide.pdf
-// and GPIO documentation at https://siliconlabs.github.io/Gecko_SDK_Doc/efm32g/html/group__GPIO.html
-// to determine the correct values for these.
-// If these links have gone bad, consult the reference manual and/or the datasheet for the MCU.
-// Change to correct port and pins:
+
+  // Number of LEDs in the series
+    uint8_t colors[NUM_LEDS][3] =
+    {
+        {255, 0 ,0},   // Red
+        {0, 255, 0},   // Red
+        {0, 0, 255},   // Red
+    };
+
 #define LED_port   (5)
 #define LED0_pin   (4) //PF4
 #define LED1_pin   (5) //PF5 IN ACTIVE HIGH
@@ -48,9 +51,17 @@
 #define Sensor_pin (15)
 #define LCD_port   (3)
 #define LCD_pin    (13)
+
 #define Light_Sensor_VCC_port gpioPortF
 #define Light_Sensor_VCC_pin 4
-#define Smoke_Sensor_VCC_pin 5
+#define Smoke_Sensor_VCC_port gpioPortC
+#define Smoke_Sensor_VCC_pin 11
+
+//#if DEVICE_IS_BLE_SERVER == 0
+
+
+
+//#endif
 
 
 // Set GPIO drive strengths and modes of operation
@@ -69,6 +80,15 @@ void gpioInit()
   GPIO_PinModeSet(Sensor_port, Sensor_pin, gpioModePushPull, false);
 
   GPIO_PinModeSet(Light_Sensor_VCC_port,Light_Sensor_VCC_pin, gpioModePushPull, false);
+
+  GPIO_PinModeSet(Smoke_Sensor_VCC_port,Smoke_Sensor_VCC_pin, gpioModePushPull, false);
+
+//#if DEVICE_IS_BLE_SERVER == 0
+
+  GPIO_PinModeSet(LED_PORT, LED_PIN, gpioModePushPull, 0);
+  GPIO_PinModeSet(POWER_PORT, POWER_PIN, gpioModePushPull, 0);
+  GPIO_PinModeSet(POWER_PORT, BUZZER_PIN, gpioModePushPull, 0);
+//#endif
 } // gpioInit()
 
 
@@ -119,14 +139,42 @@ void light_sensor_disable()
 
 void smoke_sensor_enable()
 {
-  LOG_INFO("Enable light sensor \r\n");
-  GPIO_PinOutSet(Light_Sensor_VCC_port,Smoke_Sensor_VCC_pin);
+  //LOG_INFO("Enable light sensor \r\n");
+  GPIO_PinOutSet(Smoke_Sensor_VCC_port,Smoke_Sensor_VCC_pin);
 }
 
 void smoke_sensor_disable()
 {
   LOG_INFO("Disable light sensor \r\n");
-  GPIO_PinOutClear(Light_Sensor_VCC_port,Smoke_Sensor_VCC_pin);
+  GPIO_PinOutClear(Smoke_Sensor_VCC_port,Smoke_Sensor_VCC_pin);
+}
+
+void buzzer_enable()
+{
+  LOG_INFO("Enable light sensor \r\n");
+  GPIO_PinOutSet(POWER_PORT,BUZZER_PIN);
+}
+
+void buzzer_disable()
+{
+  LOG_INFO("Enable light sensor \r\n");
+  GPIO_PinOutSet(POWER_PORT,BUZZER_PIN);
+}
+
+void  wsb_enable()
+{
+  GPIO_PinOutSet(POWER_PORT, POWER_PIN);
+  LOG_INFO("Starting LED sequence\r\n");
+  sendColors(colors);
+  delayMs(5000);
+}
+
+void wsb_disable()
+{
+  GPIO_PinOutClear(POWER_PORT, POWER_PIN);
+  LOG_INFO("Completed LED sequence\r\n");
+  delayMs(5000);
+
 }
 
 void gpioSetDisplayExtcomin(bool value)

@@ -196,7 +196,7 @@ void light_state_machine(sl_bt_msg_t *evt)
     case state0_smoke_Idle :
           LOG_INFO("Entering Idle state0 Smoke Sensor\r\n");
           nextState = state0_smoke_Idle;
-          if(evt->data.evt_system_external_signal.extsignals & eventTimerCOMP1flag)
+          if(evt->data.evt_system_external_signal.extsignals & eventTimerUFflag)
             {
               smoke_sensor_enable();
               timerWaitUs_irq(8000);
@@ -207,7 +207,7 @@ void light_state_machine(sl_bt_msg_t *evt)
         case state1_smoke_StartInit :
           LOG_INFO("Entering Start_Init state1 Smoke Sensor\r\n");
           nextState = state1_smoke_StartInit;
-          if(evt->data.evt_system_external_signal.extsignals & eventTimerCOMP1flag)
+          if(evt->data.evt_system_external_signal.extsignals & eventTimerUFflag)
               //eventTimerCOMP1flag
             {
               //sl_power_manager_add_em_requirement(SL_POWER_MANAGER_EM1);
@@ -220,7 +220,7 @@ void light_state_machine(sl_bt_msg_t *evt)
         case state2_smoke_ADCRead :
           LOG_INFO("Entering ADCRead state2 Smoke Sensor\r\n");
           nextState = state2_smoke_ADCRead;
-          if(evt->data.evt_system_external_signal.extsignals & eventTimerCOMP1flag)
+          if(evt->data.evt_system_external_signal.extsignals & eventTimerUFflag)
             {
               //sl_power_manager_remove_em_requirement(SL_POWER_MANAGER_EM1);
               //ADC_Start(ADC0, adcStartSingle);

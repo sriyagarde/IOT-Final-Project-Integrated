@@ -30,6 +30,14 @@
 
 
 #include "stdbool.h"
+#include "stdio.h"
+
+#define LED_PORT gpioPortD
+#define LED_PIN  11
+#define BUZZER_PIN 10
+
+#define POWER_PORT gpioPortD
+#define POWER_PIN  12
 
 // Function prototypes
 void gpioInit();
@@ -43,6 +51,10 @@ void light_sensor_enable();
 void light_sensor_disable();
 void smoke_sensor_enable();
 void smoke_sensor_disable();
+void buzzer_enable();
+void buzzer_disable();
+void wsb_enable();
+void wsb_disable();
 void gpioSetDisplayExtcomin(bool value);
 
 
