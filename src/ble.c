@@ -303,7 +303,7 @@ void ble_smoke()
       smoke_status[0] = smokeState;
       smoke_status[1] = 0;
       sl_status_t sc = sl_bt_gatt_server_write_attribute_value (
-          gattdb_light_status, 0, sizeof(smoke_status[0]), &smoke_status[0]);
+          gattdb_smoke_status, 0, sizeof(smoke_status[0]), &smoke_status[0]);
       if (sc != SL_STATUS_OK)
         {
           LOG_ERROR(
@@ -317,7 +317,7 @@ void ble_smoke()
 
               sc = sl_bt_gatt_server_send_indication (
                   bleData->connection_handle,
-                  gattdb_light_status,
+                  gattdb_smoke_status,
                   1, &smoke_status[0]);
               if (sc != SL_STATUS_OK)
                 {

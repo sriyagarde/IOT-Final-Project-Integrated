@@ -161,7 +161,7 @@ void light_state_machine(sl_bt_msg_t *evt)
       if(evt->data.evt_system_external_signal.extsignals & eventTimerUFflag)
         {
           light_sensor_enable();
-          timerWaitUs_irq(8000);
+          timerWaitUs_irq(80000);
           nextState = state1_StartInit;
         }
       break;
@@ -173,8 +173,9 @@ void light_state_machine(sl_bt_msg_t *evt)
           //eventTimerCOMP1flag
         {
           //sl_power_manager_add_em_requirement(SL_POWER_MANAGER_EM1);
+//          NVIC_DisableIRQ(ADC0_IRQn);
           initADC();
-          //timerWaitUs_irq(3000);
+//          timerWaitUs_irq(3000);
           nextState = state2_ADCRead;
         }
       break;
@@ -189,6 +190,7 @@ void light_state_machine(sl_bt_msg_t *evt)
           ble_ambient();
           timerWaitUs_irq(3000);
           light_sensor_disable();
+          ADC_Reset(ADC0);
           nextState = state0_smoke_Idle;
         }
       break;
@@ -199,7 +201,7 @@ void light_state_machine(sl_bt_msg_t *evt)
           if(evt->data.evt_system_external_signal.extsignals & eventTimerUFflag)
             {
               smoke_sensor_enable();
-              timerWaitUs_irq(8000);
+              timerWaitUs_irq(80000);
               nextState = state1_smoke_StartInit;
             }
           break;
@@ -211,6 +213,7 @@ void light_state_machine(sl_bt_msg_t *evt)
               //eventTimerCOMP1flag
             {
               //sl_power_manager_add_em_requirement(SL_POWER_MANAGER_EM1);
+              NVIC_DisableIRQ(ADC0_IRQn);
               initADC();
               timerWaitUs_irq(3000);
               nextState = state2_smoke_ADCRead;
@@ -227,6 +230,7 @@ void light_state_machine(sl_bt_msg_t *evt)
               ble_smoke();
               timerWaitUs_irq(3000);
               smoke_sensor_disable();
+              ADC_Reset(ADC0);
               nextState = state0_Idle;
             }
           break;

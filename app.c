@@ -194,8 +194,8 @@ SL_WEAK void app_init(void)
   init_LETIMER0();
   LOG_INFO("LETIMER init done \r\n");
   //enable interrupt for LETIMER0 in NVIC
-//  NVIC_ClearPendingIRQ(LETIMER0_IRQn);
-//  NVIC_EnableIRQ(LETIMER0_IRQn);
+  NVIC_ClearPendingIRQ(LETIMER0_IRQn);
+  NVIC_EnableIRQ(LETIMER0_IRQn);
   //i2c_init();
 
 } // app_init()

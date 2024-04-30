@@ -110,6 +110,7 @@ void initADC (void)
   // Enable ADC interrupts
   NVIC_ClearPendingIRQ(ADC0_IRQn);
   NVIC_EnableIRQ(ADC0_IRQn);
+  ADC_Start(ADC0, adcStartSingle);
 }
 
 
@@ -138,11 +139,14 @@ void ADC0_IRQHandler(void)
 {
   LOG_INFO("ADC IRQ Handler triggered.\r\n");
   // Clear the interrupt flag
-  ADC_IntClear(ADC0, ADC_IF_SINGLE);
+  uint32_t flags = ADC_IntGetEnabled(ADC0);
+
+  ADC_IntClear(ADC0, flags);
 
   //delayApprox(300000);
   timerWaitUs_irq(300000);
-
+  if(flags & ADC_IF_SINGLE)
+    {
   if(channel == 0)
     {
   // Get ADC result
@@ -154,6 +158,7 @@ void ADC0_IRQHandler(void)
     {
   sample_smoke = ADC_DataSingleGet(ADC0);
   channel = 0;
+    }
     }
   //LOG_INFO("Sample from ADC = %d",sample);
   // Calculate input voltage in mV

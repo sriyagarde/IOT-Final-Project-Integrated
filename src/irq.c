@@ -86,7 +86,7 @@ void LETIMER0_IRQHandler (void)
       LETIMER_IntDisable(LETIMER0, LETIMER_IEN_COMP1);
      // LOG_INFO("Comp1 flag \r\n");
       schedulerSetEventCOMP1Flag();
-      ADC_Start(ADC0, adcStartSingle);
+//      ADC_Start(ADC0, adcStartSingle);
 
     }
 
